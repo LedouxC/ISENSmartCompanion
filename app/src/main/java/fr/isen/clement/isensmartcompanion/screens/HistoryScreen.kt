@@ -1,4 +1,4 @@
-package fr.isen.giusiano.isensmartcompanion.screens
+package fr.isen.clement.isensmartcompanion.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -26,9 +26,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import fr.isen.giusiano.isensmartcompanion.R
-import fr.isen.giusiano.isensmartcompanion.database.AppDatabase
-import fr.isen.giusiano.isensmartcompanion.models.Message
+import fr.isen.clement.isensmartcompanion.R
+import fr.isen.clement.isensmartcompanion.database.AppDatabase
+import fr.isen.clement.isensmartcompanion.models.Message
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Date

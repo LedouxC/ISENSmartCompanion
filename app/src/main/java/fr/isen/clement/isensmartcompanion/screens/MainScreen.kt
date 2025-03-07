@@ -1,6 +1,5 @@
-package fr.isen.giusiano.isensmartcompanion.screens
+package fr.isen.clement.isensmartcompanion.screens
 
-import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -22,11 +21,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import fr.isen.giusiano.isensmartcompanion.R
+import fr.isen.clement.isensmartcompanion.R
 import com.google.ai.client.generativeai.GenerativeModel
-import fr.isen.giusiano.isensmartcompanion.database.AppDatabase
-import fr.isen.giusiano.isensmartcompanion.models.Message
+import fr.isen.clement.isensmartcompanion.database.AppDatabase
+import fr.isen.clement.isensmartcompanion.models.Message
 import kotlinx.coroutines.launch
+import androidx.compose.ui.graphics.Color
+
 
 @Composable
 fun MainScreen(innerPadding: PaddingValues, db: AppDatabase) {
@@ -36,7 +37,7 @@ fun MainScreen(innerPadding: PaddingValues, db: AppDatabase) {
     val generativeModel = remember {
         GenerativeModel(
             modelName = "gemini-1.5-flash",
-            apiKey = ""
+            apiKey = "AIzaSyCmm3cXA2TiLZagooAjGLE9_YwhNwTH0aw"
         )
     }
 
@@ -54,9 +55,19 @@ fun MainScreen(innerPadding: PaddingValues, db: AppDatabase) {
             painter = painterResource(id = R.drawable.isen_logo),
             contentDescription = context.getString(R.string.isen_logo),
             modifier = Modifier
-                .size(120.dp)
+                .size(180.dp)
                 .align(Alignment.CenterHorizontally)
         )
+
+        Text(
+            text = "Welcome to ISEN Smart Companion!",
+            fontSize = 20.sp,
+            color = Color.Black,
+            modifier = Modifier
+                .padding(top = 16.dp, bottom = 16.dp)
+                .align(Alignment.CenterHorizontally)
+        )
+
 
         LazyColumn(
             modifier = Modifier
@@ -64,7 +75,7 @@ fun MainScreen(innerPadding: PaddingValues, db: AppDatabase) {
                 .fillMaxWidth()
                 .padding(horizontal = 8.dp, vertical = 12.dp)
                 .clip(RoundedCornerShape(12.dp))
-                .background(colorResource(R.color.white))
+                .background(Color(0xFFF5F5F5))
                 .padding(16.dp),
         ) {
             items(messages) { msg ->
@@ -120,7 +131,8 @@ fun MainScreen(innerPadding: PaddingValues, db: AppDatabase) {
 
 @Composable
 fun ChatBubble(message: Message) {
-    val backgroundColor = if (message.isUser) colorResource(R.color.user_message) else colorResource(R.color.ai_message)
+    val backgroundColor = if (message.isUser) Color(0xFF007AFF) else Color(0xFFD1D1D6)
+    val textColor = if (message.isUser) Color.White else Color.Black
 
     Column(
         modifier = Modifier
@@ -137,14 +149,14 @@ fun ChatBubble(message: Message) {
 
         Box(
             modifier = Modifier
-                .clip(RoundedCornerShape(12.dp))
+                .clip(RoundedCornerShape(20.dp))
                 .background(backgroundColor)
-                .padding(12.dp)
+                .padding(16.dp)
         ) {
             Text(
                 text = message.text,
                 fontSize = 16.sp,
-                color = colorResource(R.color.white)
+                color = textColor
             )
         }
     }

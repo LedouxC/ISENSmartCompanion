@@ -1,10 +1,10 @@
-package fr.isen.giusiano.isensmartcompanion.dao
+package fr.isen.clement.isensmartcompanion.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import fr.isen.giusiano.isensmartcompanion.models.Message
+import fr.isen.clement.isensmartcompanion.models.Message
 
 @Dao
 interface MessageDao {

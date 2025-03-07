@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "fr.isen.giusiano.isensmartcompanion"
+    namespace = "fr.isen.clement.isensmartcompanion"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "fr.isen.giusiano.isensmartcompanion"
+        applicationId = "fr.isen.clement.isensmartcompanion"
         minSdk = 25
         targetSdk = 35
         versionCode = 1

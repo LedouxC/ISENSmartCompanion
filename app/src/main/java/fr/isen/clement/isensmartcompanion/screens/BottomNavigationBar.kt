@@ -1,5 +1,6 @@
-package fr.isen.giusiano.isensmartcompanion.screens
+package fr.isen.clement.isensmartcompanion.screens
 
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -9,9 +10,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavController
-import fr.isen.giusiano.isensmartcompanion.TabBarItem
+import fr.isen.clement.isensmartcompanion.TabBarItem
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+
+
 
 @Composable
 fun TabView(tabBarItems: List<TabBarItem>, navController: NavController) {
@@ -19,38 +25,47 @@ fun TabView(tabBarItems: List<TabBarItem>, navController: NavController) {
         mutableStateOf(0)
     }
 
-    NavigationBar {
+    NavigationBar(containerColor = Color(0xFF0A84FF)) {
         tabBarItems.forEachIndexed { index, tabBarItem ->
             NavigationBarItem(
+                modifier = Modifier.clip(CircleShape),
                 selected = selectedTabIndex == index,
                 onClick = {
                     selectedTabIndex = index
                     navController.navigate(tabBarItem.title)
                 },
                 icon = {
-                    TabBarIconView(
-                        isSelected = selectedTabIndex == index,
-                        selectedIcon = tabBarItem.selectedIcon,
-                        unselectedIcon = tabBarItem.unselectedIcon,
-                        title = tabBarItem.title,
-                        badgeAmount = tabBarItem.badgeAmount
+                    Icon(
+                        imageVector = if (selectedTabIndex == index) tabBarItem.selectedIcon else tabBarItem.unselectedIcon,
+                        contentDescription = tabBarItem.title,
+                        tint = if (selectedTabIndex == index) Color.White else Color.Black
                     )
                 },
-                label = {Text(tabBarItem.title)})
+                label = {
+                    Text(
+                        tabBarItem.title,
+                        color = if (selectedTabIndex == index) Color.White else Color.Black
+                    )
+                }
+            )
         }
     }
-}
 
-@Composable
-fun TabBarIconView(
-    isSelected: Boolean,
-    selectedIcon: ImageVector,
-    unselectedIcon: ImageVector,
-    title: String,
-    badgeAmount: Int? = null
-) {
-    Icon(
-        imageVector = if (isSelected) {selectedIcon} else {unselectedIcon},
-        contentDescription = title
-    )
+    @Composable
+    fun TabBarIconView(
+        isSelected: Boolean,
+        selectedIcon: ImageVector,
+        unselectedIcon: ImageVector,
+        title: String,
+        badgeAmount: Int? = null
+    ) {
+        Icon(
+            imageVector = if (isSelected) {
+                selectedIcon
+            } else {
+                unselectedIcon
+            },
+            contentDescription = title
+        )
+    }
 }

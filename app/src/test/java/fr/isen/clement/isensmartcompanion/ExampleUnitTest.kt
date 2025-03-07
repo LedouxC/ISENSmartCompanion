@@ -1,4 +1,4 @@
-package fr.isen.giusiano.isensmartcompanion
+package fr.isen.clement.isensmartcompanion
 
 import org.junit.Test
 

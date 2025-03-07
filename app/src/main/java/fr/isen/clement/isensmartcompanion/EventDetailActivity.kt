@@ -1,4 +1,4 @@
-package fr.isen.giusiano.isensmartcompanion
+package fr.isen.clement.isensmartcompanion
 
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -23,8 +23,8 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import fr.isen.giusiano.isensmartcompanion.models.Event
-import fr.isen.giusiano.isensmartcompanion.services.NotificationReceiver
+import fr.isen.clement.isensmartcompanion.models.Event
+import fr.isen.clement.isensmartcompanion.services.NotificationReceiver
 
 class EventDetailActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,9 +62,9 @@ fun EventDetailScreen(event: Event, prefs: SharedPreferences) {
             modifier = Modifier.padding(bottom = 8.dp)
         )
 
-        DetailCard(label = stringResource(id = R.string.date_label), value = event.date)
-        DetailCard(label = stringResource(id = R.string.location_label), value = event.location)
-        DetailCard(label = stringResource(id = R.string.category_label), value = event.category)
+        DetailCard(label = "📆 Scheduled for:", value = event.date)
+        DetailCard(label = "📍 Location:", value = event.location)
+        DetailCard(label = "🏷 Category:", value = event.category)
 
         Spacer(modifier = Modifier.height(16.dp))
 

@@ -1,4 +1,4 @@
-package fr.isen.giusiano.isensmartcompanion.services
+package fr.isen.clement.isensmartcompanion.services
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -8,7 +8,7 @@ import android.app.NotificationManager
 import android.os.Build
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import fr.isen.giusiano.isensmartcompanion.R
+import fr.isen.clement.isensmartcompanion.R
 
 class NotificationReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {

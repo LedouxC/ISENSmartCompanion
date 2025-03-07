@@ -1,4 +1,4 @@
-package fr.isen.giusiano.isensmartcompanion.models
+package fr.isen.clement.isensmartcompanion.models
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

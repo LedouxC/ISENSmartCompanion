@@ -9,20 +9,21 @@
     <string name="title_activity_event_detail">EventDetailActivity</string>
 
     //EventDetails
-    <string name="notify_on">Notify me : ON</string>
-    <string name="notify_off">Notify me : OFF</string>
-    <string name="date_label">Date:</string>
-    <string name="location_label">Location:</string>
-    <string name="category_label">Category:</string>
-    <string name="event_not_found">Event not found</string>
+    <string name="notify_on">Reminder: ON</string>
+    <string name="notify_off">Reminder: OFF</string>
+    <string name="date_label">📆 Scheduled for:</string>
+    <string name="location_label">📍 Location:</string>
+    <string name="category_label">🏷 Category:</string>
+    <string name="event_not_found">Oops! This event is missing.</string>
 
     //MainScreen
     <string name="ask_question">Ask me a question...</string>
+    <string name="welcome_message">Welcome! Discover and manage your events easily.</string>
 
     //EventScreen
-    <string name="event_list_title">Event List</string>
-    <string name="event_location">Location</string>
-    <string name="event_date">Date</string>
+    <string name="event_list_title">📅 Upcoming Events</string>
+    <string name="event_location">📍 Where?</string>
+    <string name="event_date">📅 Happening on</string>
 
     //HistoryScreen
     <string name="message_history_title">Message History</string>

@@ -1,4 +1,4 @@
-package fr.isen.giusiano.isensmartcompanion
+package fr.isen.clement.isensmartcompanion
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -20,12 +20,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.room.Room
-import fr.isen.giusiano.isensmartcompanion.database.AppDatabase
-import fr.isen.giusiano.isensmartcompanion.screens.EventsScreen
-import fr.isen.giusiano.isensmartcompanion.screens.HistoryScreen
-import fr.isen.giusiano.isensmartcompanion.screens.MainScreen
-import fr.isen.giusiano.isensmartcompanion.screens.TabView
-import fr.isen.giusiano.isensmartcompanion.ui.theme.ISENSmartCompanionTheme
+import fr.isen.clement.isensmartcompanion.database.AppDatabase
+import fr.isen.clement.isensmartcompanion.screens.EventsScreen
+import fr.isen.clement.isensmartcompanion.screens.HistoryScreen
+import fr.isen.clement.isensmartcompanion.screens.MainScreen
+import fr.isen.clement.isensmartcompanion.screens.TabView
+import fr.isen.clement.isensmartcompanion.ui.theme.ISENSmartCompanionTheme
 
 data class TabBarItem(
     val title: String,
